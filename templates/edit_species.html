@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Rediģēt sugu - KvakLapa{% endblock %}
+
+{% block content %}
+<div class="species-form">
+    <h1>Rediģēt sugu</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <!-- Pamata informācija -->
+        <div class="form-group">
+            <label for="name">Nosaukums:</label>
+            <input type="text" id="name" name="name" value="{{ species.name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="scientific_name">Zinātniskais nosaukums:</label>
+            <input type="text" id="scientific_name" name="scientific_name" value="{{ species.scientific_name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="average_length_cm">Vidējais garums (cm):</label>
+            <input type="number" id="average_length_cm" name="average_length_cm" step="0.1" value="{{ species.average_length_cm }}" required>
+        </div>
+        
+        <!-- Sastopama Latvijā checkbox -->
+        <div class="form-group custom-checkbox-container">
+            <input type="checkbox" id="found_in_latvia" name="found_in_latvia" {% if species.found_in_latvia %}checked{% endif %}>
+            <label for="found_in_latvia" class="custom-checkbox-label">Sastopama Latvijā</label>
+        </div>
+        
+        <div class="form-group">
+            <label for="latvia_location">Atrašanās vieta Latvijā (ja attiecas):</label>
+            <input type="text" id="latvia_location" name="latvia_location" value="{{ species.latvia_location }}">
+        </div>
+        
+        <!-- Klasifikācija -->
+        <div class="form-group">
+            <label for="order">Kārta:</label>
+            <input type="text" id="order" name="order" value="{{ classification.order }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="family">Dzimta:</label>
+            <input type="text" id="family" name="family" value="{{ classification.family }}" required>
+        </div>
+        
+        <!-- Aizsardzības statuss -->
+        <div class="form-group">
+            <label for="status">Aizsardzības statuss:</label>
+            <input type="text" id="status" name="status" value="{{ conservation.status }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="notes">Piezīmes par aizsardzību:</label>
+            <textarea id="notes" name="notes" rows="3">{{ conservation.notes }}</textarea>
+        </div>
+        
+        <!-- Dzīvotnes -->
+        <div class="form-group">
+            <label>Dzīvotnes:</label>
+            <div class="habitats-container">
+                {% for habitat in habitats %}
+                <div class="habitat-checkbox">
+                    <input type="checkbox" id="habitat{{ habitat.id }}" name="habitats" value="{{ habitat.id }}"
+                    {% if habitat.id in species_habitat_ids %}checked{% endif %}>
+                    <label for="habitat{{ habitat.id }}">{{ habitat.habitat_type }}</label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Attēli -->
+        <div class="form-group">
+            <label for="image">Galvenais attēls:</label>
+            {% if species.image %}
+                <div class="current-image">
+                    <img src="{{ url_for('static', filename='images/species/' + species.image) }}" width="100" alt="Pašreizējais attēls">
+                    <p>Pašreizējais: {{ species.image }}</p>
+                </div>
+            {% endif %}
+            <input type="file" id="image" name="image" accept="image/*">
+            <small>Atstājiet tukšu, lai saglabātu pašreizējo attēlu</small>
+        </div>
+        
+        <div class="form-group">
+            <label for="detail_image">Detalizētais attēls:</label>
+            {% if species.detail_image %}
+                <div class="current-image">
+                    <img src="{{ url_for('static', filename='images/species/' + species.detail_image) }}" width="100" alt="Pašreizējais detalizētais attēls">
+                    <p>Pašreizējais: {{ species.detail_image }}</p>
+                </div>
+            {% endif %}
+            <input type="file" id="detail_image" name="detail_image" accept="image/*">
+            <small>Atstājiet tukšu, lai saglabātu pašreizējo attēlu</small>
+        </div>
+        
+        <!-- Pogas -->
+        <div class="form-actions">
+            <a href="{{ url_for('species_detail', species_id=species.id) }}" class="cancel-button">Atcelt</a>
+            <button type="submit" class="submit-button">Saglabāt izmaiņas</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

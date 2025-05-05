@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ species.name }} - KvakLapa{% endblock %}
+
+{% block content %}
+<div class="species-detail-layout">
+
+    <div class="species-text">
+        <h1 class="species-namee">{{ species.name }}</h1>
+        <p class="species-scientificc"><em>{{ species.scientific_name }}</em></p>
+
+        <div class="species-description">
+            <p><span class="desc-title">Vidējais garums:</span> {{ species.average_length_cm }} cm</p>
+
+            {% if species.found_in_latvia %}
+                <p><span class="desc-title">Sastopama Latvijā:</span> {{ species.latvia_location }}</p>
+            {% else %}
+                <p><span class="desc-title">Nav sastopama Latvijā.</span></p>
+            {% endif %}
+
+            {% if classification %}
+                <p><span class="desc-title">Kārta:</span> {{ classification.order }} </p>
+                <p><span class="desc-title">Dzimta:</span> {{ classification.family }}</p>
+            {% endif %}
+
+            {% if conservation %}
+                <p><span class="desc-title">Aizsardzības statuss:</span> {{ conservation.status }}</p>
+                <p><span class="desc-title">Piezīmes:</span> {{ conservation.notes }}</p>
+            {% endif %}
+
+            {% if habitats %}
+                <h3 class="desc-title">Biotopi:</h3>
+                <ul>
+                    {% for h in habitats %}
+                        <li>{{ h.habitat_type }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <a class="back-link" href="{{ url_for('species') }}">&#8592; Atpakaļ uz sugām</a>
+    </div>
+
+    {% if species.detail_image %}
+    <div class="species-image-wrapper">
+        <img class="species-detail-img" src="{{ url_for('static', filename='images/species/' + species.detail_image) }}" alt="Attēls: {{ species.name }}">
+    </div>
+    
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}

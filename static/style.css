@@ -1,0 +1,836 @@
+
+/* base.html */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0e0e0e;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    height: 70px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c0ff90;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #1c1c1c;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 15px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+
+
+
+/* species.html */
+.species-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.species-item {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.species-item:hover {
+    background-color: #4a4a4a;
+    transform: translateY(-5px);
+}
+
+.species-img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.species-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #99c68e;
+    text-shadow: 0 0 3px #99c68e;
+}
+
+.species-scientific {
+    font-style: italic;
+    color: #b39ddb;
+    text-shadow: 0 0 5px #b39ddb;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card-link-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 auto;
+}
+
+.homepage-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.card-link-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 1500px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.homepage-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(145deg, #222, #2d2d2d);
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homepage-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.card-image,
+.card-text {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-text h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #81c784;
+    text-shadow: 0 0 4px #81c784;
+    text-align: center;
+}
+
+.card-text p {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* sakuma lapa */
+.homepage-section {
+    padding: 20px 20px;
+}
+
+/* Header sadaļa */
+.homepage-header {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* KvakLapa virsraksts */
+.homepage-title {
+    display: inline-block;
+    /* <-- Rāmis tieši ap tekstu! */
+    font-size: 2.8em;
+    color: #99c68e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 12px 380px;
+    /* Tuvu tekstam, bet ar elpu */
+    border: 2px solid #99c68e;
+    border-radius: 25px;
+    background: rgba(20, 20, 20, 0.85);
+    box-shadow: 0 0 5px #99c68e, 0 0 15px #66bb6a;
+    text-shadow: 0 0 8px #99c68e, 0 0 5px #66bb6a;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Uzlabots hover efekts */
+.homepage-title:hover {
+    box-shadow: 0 0 15px #99c68e, 0 0 30px #66bb6a;
+}
+
+/* Sekcija ar kartītēm */
+.homepage-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 20px 0;
+    margin-left: 80px;
+}
+
+/* Viena kartīte */
+.homepage-card {
+    display: flex;
+    background: linear-gradient(145deg, #222, #2d2d2d);
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 95%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover uz kartītēm */
+.homepage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Apgriezt otrajai kartītei */
+.homepage-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Attēla daļa */
+.card-image {
+    flex: 1 1 45%;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.homepage-card:hover .card-image img {
+    transform: scale(1.03);
+}
+
+.card-text {
+    flex: 1 1 55%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.card-text h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #81c784;
+    text-shadow: 0 0 4px #81c784;
+}
+
+.card-text p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Delete poga */
+.species-item-container {
+    position: relative;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.species-item-container:hover {
+    background-color: #4a4a4a;
+    transform: translateY(-5px);
+}
+
+.species-item {
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.delete-button {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    opacity: 0.8;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+    opacity: 1;
+}
+
+/* Edit poga */
+.edit-button-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.edit-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    opacity: 0.8;
+}
+
+.edit-button:hover {
+    background-color: #0d8bf2;
+    opacity: 1;
+}
+
+.custom-checkbox-container input[type="checkbox"]:checked + .custom-checkbox-label::before {
+    background-color: #50c878;
+    border-color: #50c878;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 10l3 3 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+
+
+
+/* species_detail */
+
+.species-detail-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.species-text {
+    flex: 1 1 45%;
+    max-width: 600px;
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.species-namee {
+    text-transform: uppercase;
+    color: #99c68e;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.species-scientificc {
+    font-size: 1.4em;
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.species-description p,
+.species-description li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.desc-title {
+    font-weight: bold;
+    color: #99c68e;
+}
+
+.species-image-wrapper {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.species-detail-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 0 100px #81c784;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.species-detail-img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 35px #7e57c2;
+}
+
+.back-link {
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #81c784;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #c0ff90;
+}
+
+
+
+
+/* staasts */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0e0e0e;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #1c1c1c;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.frog-path-wrapper {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.frog-path-title {
+    font-size: 2.8em;
+    color: #99c68e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #99c68e, 0 0 20px #66bb6a;
+}
+
+.frog-info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #222, #2d2d2d);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.frog-info-section+.frog-info-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.frog-info-text {
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.frog-description-block {
+    flex: 1;
+}
+
+.frog-word-rotated {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #7e57c2;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #7e57c2;
+}
+
+.frog-description {
+    font-size: 1.2em;
+    color: #e0e0e0;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.frog-info-video {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frog-video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
+}
+
+.frog-info-image {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.frog-side-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.frog-side-image.green-glow {
+    box-shadow: 0 0 100px rgba(153, 198, 142, 0.4);
+}
+
+.frog-side-image.green-glow:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 60px rgba(153, 198, 142, 0.6);
+}
+
+.frog-side-image.purple-glow {
+    box-shadow: 0 0 100px #7e57c2;
+}
+
+.frog-side-image.purple-glow:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 60px #7e57c2;
+}
+
+.frog-side-heading {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.frog-side-heading.green {
+    color: #99c68e;
+    text-shadow: 0 0 6px #99c68e;
+}
+
+.frog-side-heading:not(.green) {
+    color: #7e57c2;
+    text-shadow: 0 0 6px #7e57c2;
+}
+
+.frog-text-inner {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: linear-gradient(145deg, #1b1b1b, #252525);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+.frog-descriptionn {
+    font-size: 1.25em;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+/* add_species.html */
+.species-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #dcdcdc;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.species-form h1 {
+    text-align: center;
+    color: #a4e68d;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.habitats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.habitat-checkbox {
+    background-color: #2a2a2a;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid #444;
+}
+
+.habitat-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.submit-button,
+.cancel-button {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #50c878;
+    color: #1a1a1a;
+}
+
+.cancel-button {
+    background-color: #444;
+    color: #ccc;
+}
+
+input[type="checkbox"]#found_in_latvia {
+    display: none;
+}
+
+label.custom-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #cfcfcf;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+    position: relative;
+}
+
+label.custom-checkbox-label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 2px solid #888;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    transition: background 0.2s, border 0.2s;
+}
+
+input[type="checkbox"]#found_in_latvia:checked+label.custom-checkbox-label::before {
+    background-color: #50c878;
+    border-color: #50c878;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 10l3 3 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+.custom-checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox-label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 2px solid #888;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    transition: background 0.2s, border 0.2s;
+}
+
+.custom-checkbox-container input[type="checkbox"]:checked + .custom-checkbox-label::before {
+    background-color: #50c878;
+    border-color: #50c878;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 10l3 3 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+.frog-path-titlee {
+    font-size: 1em;
+    color: #99c68e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #99c68e, 0 0 20px #66bb6a;
+}
+
+.current-image {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.current-image img {
+    border-radius: 4px;
+    border: 2px solid #444;
+}
+
+.current-image p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+

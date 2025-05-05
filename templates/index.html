@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Sākums - KvakLapa{% endblock %}
+
+{% block content %}
+<section class="homepage-section">
+
+    <div class="homepage-header">
+        <h1 class="homepage-title">KvakLapa</h1>
+    </div>
+
+    <div class="homepage-cards">
+        {% for face in frog_faces %}
+            <a href="{% if loop.index == 1 %}
+                        {{ url_for('species') }}
+                     {% elif loop.index == 2 %}
+                        {{ url_for('species_detail', species_id=3) }}
+                     {% elif loop.index == 3 %}
+                        {{ url_for('about') }}
+                     {% endif %}" 
+               class="card-link-wrapper">
+
+                <div class="homepage-card {% if loop.index == 2 %}reverse{% endif %}">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/frog_faces/' + face.filename) }}" alt="Varde" class="frog-face-img">
+                    </div>
+                    <div class="card-text">
+                        {% if loop.index == 1 %}
+                            <h2>DAŽĀDAS SUGAS</h2>
+                            <p>kļūsti par gramu gudrāks</p>
+                        {% elif loop.index == 2 %}
+                            <h2>VISS AP UN PAR TĀM</h2>
+                            <p>nosaukumi, atrašanās vietas, izmēri un klasifikācija — tas viss vienuviet</p>
+                        {% elif loop.index == 3 %}
+                            <h2>MĀJASLAPAS ĪPAŠNIECES FAVORĪTI</h2>
+                            <p>vardes, kuras ieņem īpašu vietu viņas sirsniņā</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </a>
+        {% endfor %}
+
+        <a href="{{ url_for('add_species') }}" class="card-link-wrapper">
+            <div class="homepage-card">
+                <div class="card-text">
+                    <h2>PIEVIENO SAVU VARDES SUGU</h2>
+                    <p>ja neredzi savu mīļāko vardi, tad pievieno to</p>
+                </div>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/frog_faces/frog.png') }}" alt="Varde kāpj pa zaru" class="frog-face-img">
+                </div>
+            </div>
+        </a>
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Par mums - KvakLapa{% endblock %}
+
+{% block content %}
+
+<!-- VIRSRAKSTS -->
+<section class="frog-path-wrapper">
+    <h1 class="frog-path-title">Ceļš līdz vardēm</h1>
+</section>
+
+<!-- DEFINIICIJA UN VIDEO -->
+<section class="frog-info-section">
+    <div class="frog-info-text">
+        <div class="frog-word-rotated">VARDE</div>
+        <div class="frog-description-block">
+            <p class="frog-description">
+                Bezastaino abinieku kārtas dzimta ("Ranidae"), kurā ietilpst dzīvnieki ar masīvu ķermeni, platu galvu,
+                gludu un mitru ādu, garām, lēkšanai un peldēšanai piemērotām pakaļkājām.
+            </p>
+        </div>
+    </div>
+
+    <div class="frog-info-video">
+        <video class="frog-video" controls autoplay muted loop>
+            <source src="{{ url_for('static', filename='video/vardite.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<!-- VARDE KA MAJDZIVNIEKS RAKSTS -->
+<section>
+    <div class="frog-text-inner">
+        <h2 class="frog-side-heading green">Varde kā mājdzīvnieks</h2>
+        <p class="frog-descriptionn">
+            Ja ikdienā tev nav laika doties garās pastaigās un veikt citus ar mājdzīvnieka aprūpi saistītus pienākumus,
+            taču gribas tuvumā kādu dzīvu radību, viena no izvēlēm varētu būt varde. Kurkstētāja darbosies savā nodabā
+            un būs apmierināta, ja pāris reizes nedēļā tai sagādāsies barību. /V.Vizule/
+        </p>
+    </div>
+</section>
+
+<!-- VARDIVE UZ PIEKARINA -->
+<section class="frog-info-section">
+    <div class="frog-info-imagee">
+        <img src="{{ url_for('static', filename='images/piekarins/piekarins.png') }}" alt="Vardive uz piekariņa"
+            class="frog-side-image purple-glow">
+    </div>
+
+    <div class="frog-info-text">
+        <div class="frog-description-block">
+            <h2 class="frog-side-heading">GANDRĪZ KĀ MĀJDZĪVNIEKS</h2>
+            <p class="frog-description">
+                Runājot par mājdzīvniekiem – šī jau gandrīz par tādu kļuvusi. Izgatavota no vienkārša, plāna finiera
+                gabala, bet ar lielu raksturu.
+                Vardes patiešām ir lieliski mājdzīvnieki — paskaties uz šo, bez raizēm, vienmēr seko līdzi. Šīs vardes
+                stāsts ir pavisam vienkāršs.
+                Digitālajā dizainā vajadzēja veidot piekariņu, un, meklējot "CNC laser cut" attēlus Google, uzgāju
+                vardes bildi. Nodomāju: "Jā, taisīšu piekariņu ar vardi."
+                Un klasesbiedri pat nenojauta, ka Žanete varētu sākt asociēries ar vardēm.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- VARDE UZ KARTINAS -->
+<section class="frog-info-section">
+    <div class="frog-info-text">
+        <div class="frog-description-block">
+            <h2 class="frog-side-heading green">ZAĻš ir MIERS</h2>
+            <p class="frog-description">
+                Arī šīs vardes stāsts ir vienkāršs. Digitālajos dizainos vajadzēja veidot kartiņu ar specifisku
+                izgriezumu. Un kas gan var būt labāks par vardi? Ja jau piekariņš ar vardi,
+                tad arī uz kartiņas jābūt vardei! Nu paskaties uz šo — kā nepaturēt? Tā arī aizsākās Žanetes asociācija
+                ar vardēm.
+            </p>
+        </div>
+    </div>
+
+    <div class="frog-info-image">
+        <img src="{{ url_for('static', filename='images/kartina/kartina.jpg') }}" alt="Varde zinātnē"
+            class="frog-side-image green-glow">
+    </div>
+</section>
+
+<!-- BLENDER VARDE -->
+<section class="frog-info-section">
+    <div class="frog-info-imagee">
+        <img src="{{ url_for('static', filename='images/blender_varde/varde.png') }}" alt="Vardes izcelsme"
+            class="frog-side-image purple-glow">
+    </div>
+
+    <div class="frog-info-text">
+        <div class="frog-description-block">
+            <h2 class="frog-side-heading">Vardes izcelsme</h2>
+            <p class="frog-description">
+                Un tad vēl šī varde. Viņa nav tāda kā pārējās. Skaties uz viņas robotizēto skatienu — iznīcinošs, graujošs. Protams, viņai ir arī krāsa un kustība, 
+                bet to vēlāk. Šobrīd pietiek ar šo skatienu, kas pats par sevi izsaka visu — raksturu un personību.
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

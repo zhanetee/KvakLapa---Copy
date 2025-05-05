@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}KvakLapa{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/maza.ico') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='images/liela.png') }}" alt="Logo" class="logo">
+    <nav>
+        <a href="/">Sākums</a>
+        <a href="/sugas">Sugas</a>
+        <a href="/par-mums">Stāsts</a>
+        <a href="/pievienot">Pievienot</a>
+    </nav>
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>&copy; 2025 KvakLapa</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Pievienot Jaunu Sugu - KvakLapa{% endblock %}
+
+{% block content %}
+<div class="species-form">
+    <div class="frog-path-titlee">    
+        <h1>Pievienot Jaunu Vardes Sugu</h1>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Sugas nosaukums:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="scientific_name">Zinātniskais nosaukums:</label>
+            <input type="text" id="scientific_name" name="scientific_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="average_length_cm">Vidējais garums (cm):</label>
+            <input type="number" id="average_length_cm" name="average_length_cm" step="0.1" required>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" id="found_in_latvia" name="found_in_latvia">
+            <label for="found_in_latvia" class="custom-checkbox-label">Sastopama Latvijā</label>
+        </div>
+
+        <div class="form-group">
+            <label for="latvia_location">Vieta Latvijā (ja sastopama):</label>
+            <input type="text" id="latvia_location" name="latvia_location">
+        </div>
+
+        <div class="form-group">
+            <label for="order">Kārta:</label>
+            <input type="text" id="order" name="order" required>
+        </div>
+
+        <div class="form-group">
+            <label for="family">Dzimta:</label>
+            <input type="text" id="family" name="family" required>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Aizsardzības statuss:</label>
+            <input type="text" id="status" name="status" required>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Piezīmes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Biotopi:</label>
+            <div class="habitats-container">
+                {% for habitat in habitats %}
+                <div class="custom-checkbox-container">
+                    <input type="checkbox" id="habitat-{{ habitat['id'] }}" name="habitats" value="{{ habitat['id'] }}">
+                    <label for="habitat-{{ habitat['id'] }}" class="custom-checkbox-label">{{ habitat['habitat_type'] }}</label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Sugu saraksta attēls:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="detail_image">Detalizētais attēls:</label>
+            <input type="file" id="detail_image" name="detail_image" accept="image/*">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="submit-button">Pievienot sugu</button>
+            <a href="{{ url_for('species') }}" class="cancel-button">Atcelt</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

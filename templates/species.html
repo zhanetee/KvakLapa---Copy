@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Sugas - KvakLapa{% endblock %}
+
+{% block content %}
+
+<div class="species-list">
+    {% for frog in species %}
+        <div class="species-item-container">
+            <a class="species-item" href="{{ url_for('species_detail', species_id=frog.id) }}">
+                {% if frog.image %}
+                    <img class="species-img" src="{{ url_for('static', filename='images/species/' + frog.image) }}" alt="{{ frog.name }}">
+                {% else %}
+                    <img class="species-img" src="{{ url_for('static', filename='images/species/default.jpeg') }}" alt="Bilde nav pieejama">
+                {% endif %}
+
+                <div class="species-name">{{ frog.name }}</div>
+                <div class="species-scientific">({{ frog.scientific_name }})</div>
+            </a>
+            <form method="POST" action="{{ url_for('delete_species', species_id=frog.id) }}" onsubmit="return confirm('Vai tiešām vēlaties dzēst šo sugu?');" class="delete-form">
+                <button type="submit" class="delete-button">×</button>
+            </form>
+            <a href="{{ url_for('edit_species', species_id=frog.id) }}" class="edit-button-link">
+                <button type="button" class="edit-button">✎</button>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
