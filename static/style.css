@@ -1,4 +1,3 @@
-
 /* base.html */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -194,24 +193,22 @@ footer {
     padding: 20px 20px;
 }
 
-/* Header sadaļa */
 .homepage-header {
     text-align: center;
     margin-top: 0;
     margin-bottom: 40px;
 }
 
-/* KvakLapa virsraksts */
 .homepage-title {
     display: inline-block;
-    /* <-- Rāmis tieši ap tekstu! */
     font-size: 2.8em;
     color: #99c68e;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 0;
-    padding: 12px 380px;
-    /* Tuvu tekstam, bet ar elpu */
+    padding: 12px;
+    width: 80%;
+    max-width: 800px;
     border: 2px solid #99c68e;
     border-radius: 25px;
     background: rgba(20, 20, 20, 0.85);
@@ -220,12 +217,136 @@ footer {
     transition: box-shadow 0.3s ease;
 }
 
-/* Uzlabots hover efekts */
-.homepage-title:hover {
-    box-shadow: 0 0 15px #99c68e, 0 0 30px #66bb6a;
+.frog-face-img,
+.species-img,
+.species-detail-img,
+.frog-side-image,
+.current-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* Sekcija ar kartītēm */
+@media (max-width: 768px) {
+    .homepage-title {
+        font-size: 2em;
+        width: 90%;
+        padding: 10px;
+    }
+
+    .homepage-cards {
+        margin-left: 0;
+    }
+
+    .homepage-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .homepage-card.reverse {
+        flex-direction: column;
+    }
+
+    .card-image,
+    .card-text {
+        flex: 1 1 100%;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .card-text {
+        padding: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .species-detail-layout {
+        flex-direction: column;
+    }
+
+    .species-text,
+    .species-image-wrapper {
+        flex: 1 1 100%;
+    }
+
+    .species-img,
+    .species-detail-img,
+    .frog-side-image,
+    .frog-video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .frog-info-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .frog-info-text,
+    .frog-info-video,
+    .frog-info-image {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage-title {
+        font-size: 1.6em;
+        padding: 8px;
+        letter-spacing: 1px;
+    }
+
+    .card-text h2 {
+        font-size: 1.5em;
+    }
+
+    .card-image img {
+        max-height: 200px;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    .species-list {
+        grid-template-columns: 1fr;
+    }
+
+    .frog-word-rotated {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .frog-path-title,
+    .frog-path-titlee {
+        font-size: 1.8em;
+    }
+
+    .species-namee {
+        font-size: 2em;
+    }
+
+    .species-form {
+        padding: 1rem;
+    }
+
+    .habitats-container {
+        flex-direction: column;
+    }
+}
+
 .homepage-cards {
     display: flex;
     flex-direction: column;
@@ -235,7 +356,6 @@ footer {
     margin-left: 80px;
 }
 
-/* Viena kartīte */
 .homepage-card {
     display: flex;
     background: linear-gradient(145deg, #222, #2d2d2d);
@@ -247,18 +367,15 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover uz kartītēm */
 .homepage-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
 
-/* Apgriezt otrajai kartītei */
 .homepage-card.reverse {
     flex-direction: row-reverse;
 }
 
-/* Attēla daļa */
 .card-image {
     flex: 1 1 45%;
     overflow: hidden;
@@ -380,7 +497,7 @@ footer {
     opacity: 1;
 }
 
-.custom-checkbox-container input[type="checkbox"]:checked + .custom-checkbox-label::before {
+.custom-checkbox-container input[type="checkbox"]:checked+.custom-checkbox-label::before {
     background-color: #50c878;
     border-color: #50c878;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 10l3 3 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
@@ -393,7 +510,6 @@ footer {
 
 
 /* species_detail */
-
 .species-detail-layout {
     display: flex;
     flex-wrap: wrap;
@@ -795,7 +911,7 @@ input[type="checkbox"]#found_in_latvia:checked+label.custom-checkbox-label::befo
     transition: background 0.2s, border 0.2s;
 }
 
-.custom-checkbox-container input[type="checkbox"]:checked + .custom-checkbox-label::before {
+.custom-checkbox-container input[type="checkbox"]:checked+.custom-checkbox-label::before {
     background-color: #50c878;
     border-color: #50c878;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 10l3 3 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
@@ -832,5 +948,3 @@ input[type="checkbox"]#found_in_latvia:checked+label.custom-checkbox-label::befo
     font-size: 0.85rem;
     color: #bbb;
 }
-
-
